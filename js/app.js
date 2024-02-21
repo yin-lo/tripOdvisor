@@ -1,5 +1,5 @@
 //* création d'un écouteur sur la newsletter pour n'apparaitre que quand on clique sur "newsletter"
-/* -------------------------------------------------------- */
+/* ------------------------------------------------ */
 
 // sélectionne le lien/bouton de la nav "Newsletter" :
 const newsletterButton = document.querySelectorAll('.menu__item')[1];
@@ -18,7 +18,7 @@ newsletterButton.addEventListener('click', function (event) {
 });
 
 //* affichage de la popUp après un certains scroll
-/* -------------------------------------------------------- */
+/* ----------------------------------------------- */
 
 //  la fonction est la même qu'à la ligne 10
 
@@ -30,7 +30,7 @@ window.addEventListener('scroll', function () {
 });
 
 //* fermeture de la popUp en appuyant sur le bouton
-/* -------------------------------------------------------- */
+/* ----------------------------------------------- */
 
 // sélectionne la croix de fermeture de la nav "Newsletter" :
 const closeButton = document.querySelector('.newsletter__close');
