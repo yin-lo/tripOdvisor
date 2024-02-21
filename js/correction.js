@@ -17,6 +17,7 @@ console.log(double(5)); */
 const app = {
 	init: function () {
 		newsletter.init();
+		slider.init();
 	},
 };
 

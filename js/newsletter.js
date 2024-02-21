@@ -3,10 +3,12 @@
 /* --------------------------------------- */
 const newsletter = {
 	element: document.querySelector('.newsletter'),
+	forbiddenDomains: ['@yopmail.com', '@yopmail.fr', '@yopmail.net', '@cool.fr.nf', '@jetable.fr.nf', '@courriel.fr.nf', '@moncourrier.fr.nf', '@monemail.fr.nf', '@monmail.fr.nf', '@hide.biz.st', '@mymail.infos.st'],
 
 	init: function () {
 		newsletter.hide();
 		newsletter.newsletterHandle();
+		newsletter.formListener();
 	},
 
 	/* fonction qui permet de cacher la pop up */
@@ -51,5 +53,35 @@ const newsletter = {
 		/* pour le scroll */
 		document.addEventListener('scroll', newsletter.handleScroll);
 	},
-};
 
+	handleForm: function (event) {
+		event.preventDefault();
+		// récupérer la valeur de l'input :
+		const email = event.target[0].value;
+		/* console.log(event.target[0].value); */
+		// event.target => recup le form
+		// event.target[0] => recup input 1 du form
+		// event.target[0].value => recup la valeur saisie par l'utilisateur
+		if (newsletter.checkBadEmail(email)) {
+			alert('Cet email est jetable');
+		} else {
+			newsletter.hide();
+			alert('Email enregistré');
+		}
+	},
+	/* fonction pour vérifier si mauvais email */
+	checkBadEmail: function (emailParams) {
+		for (const domain of newsletter.forbiddenDomains) {
+			if (emailParams.includes(domain)) {
+				return true;
+			}
+		}
+		return false;
+	},
+
+	/* fonction qui écouter les adresse mail au submit */
+	formListener: function () {
+		const form = document.querySelector('.newsletter form');
+		form.addEventListener('submit', newsletter.handleForm);
+	},
+};
