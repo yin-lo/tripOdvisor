@@ -1,0 +1,12 @@
+{
+	"env": {
+		"browser": true,
+		"es6": true
+	},
+	"extends": "eslint:recommended",
+	"rules": {
+		"indent": ["error", "tab"], // indentation de 1
+		"quotes": ["error", "single", { "avoidEscape": true }], // '' et non ""
+		"semi": ["error", "always"] // ; à la fin de chaque ligne
+	}
+}

@@ -36,7 +36,7 @@ window.addEventListener('scroll', function () {
 const closeButton = document.querySelector('.newsletter__close');
 
 //  fonction de l'écoute au click
-function handleCloseNewsletter(event) {
+function handleCloseNewsletter() {
 	newsletterPop.classList.add('newsletter--hidden');
 }
 
