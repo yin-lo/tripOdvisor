@@ -18,6 +18,7 @@ const app = {
 	init: function () {
 		newsletter.init();
 		slider.init();
+		filter.init();
 	},
 };
 
