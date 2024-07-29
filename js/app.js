@@ -43,7 +43,6 @@ function handleCloseNewsletter() {
 // l'évènement au click sur la croix
 closeButton.addEventListener('click', handleCloseNewsletter);
 
-
 //* message d'erreur si l'utilisateur rentre une fausse adresse mail
 /* ------------------------------------------------- */
 const form = document.querySelector('form');
@@ -67,4 +66,3 @@ form.addEventListener('submit', function (event) {
 		}
 	}
 });
-
