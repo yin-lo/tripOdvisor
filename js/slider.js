@@ -16,7 +16,7 @@ const slider = {
 		
 	},
 	nextImage: function () {
-		// j'enregistre une nouvelle position basé sur la position actuelle
+		// j'enregistre une nouvelle position basée sur la position actuelle
 		let newPosition = slider.position;
 		if(newPosition>= slider.imageElements.length - 1){
 			newPosition = - 1;
@@ -35,9 +35,9 @@ const slider = {
 		
 	},
 	goToImage: function (newPositionParams) {
-		// recupere l'img actuellement visible (avec la class --current)
+		// récupère l'img actuellement visible (avec la class --current)
 		const currentImage = slider.imageElements[slider.position];
-		// enleve la class --current
+		// enlève la class --current
 		currentImage.classList.remove('slider__img--current');
 		// newPosition aura la valeur 1
 		// enregistre la valeur de la nouvelle position

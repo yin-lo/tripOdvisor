@@ -281,6 +281,14 @@ p {
   width: 25em;
   max-width: 100%;
   animation: .3s 0s 1 pop;
+  
+  /*message d'erreur si mauvais email*/
+  form p {
+    margin-block-start: 0.5rem;
+    color: red;
+    font-style: italic;
+    font-size: 0.7rem;
+  }
 }
 
 .newsletter--hidden {
@@ -304,6 +312,8 @@ p {
   right: 0;
   top: 0;
 }
+
+
 
 /* bottom */
 .footer {

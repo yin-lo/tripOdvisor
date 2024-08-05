@@ -26,7 +26,7 @@ const newsletter = {
 	/* fonction qui permet l'affichage de la pop up après un scroll */
 	handleScroll: function () {
 		// console.log(window.scrollY);
-		if (window.scrollY > 300) {
+		if (window.scrollY > 500) {
 			newsletter.show();
 			// retirer l'écouteur une fois qu'il est exécuté
 			document.removeEventListener('scroll', newsletter.handleScroll);
@@ -45,7 +45,7 @@ const newsletter = {
 		// fait afficher la pop up
 		linkNewsletter.addEventListener('click', newsletter.show);
 
-		// sélectionne la croix de la pop pu
+		// sélectionne la croix de la pop up
 		const closeNewsletter = document.querySelector('.newsletter__close');
 		// ferme la pop up
 		closeNewsletter.addEventListener('click', newsletter.hide);
@@ -53,6 +53,12 @@ const newsletter = {
 		/* pour le scroll */
 		document.addEventListener('scroll', newsletter.handleScroll);
 	},
+
+  addErrorMessage: function () {
+    const errorMessage = document.createElement('p');
+    errorMessage.textContent = 'Veuillez entrer une adresse email valide';
+    document.querySelector('form').appendChild(errorMessage);
+  },
 
 	handleForm: function (event) {
 		event.preventDefault();
@@ -63,12 +69,13 @@ const newsletter = {
 		// event.target[0] => recup input 1 du form
 		// event.target[0].value => recup la valeur saisie par l'utilisateur
 		if (newsletter.checkBadEmail(email)) {
-			alert('Cet email est jetable');
+			newsletter.addErrorMessage();
 		} else {
 			newsletter.hide();
 			alert('Email enregistré');
 		}
 	},
+
 	/* fonction pour vérifier si mauvais email */
 	checkBadEmail: function (emailParams) {
 		for (const domain of newsletter.forbiddenDomains) {
