@@ -349,6 +349,23 @@ p {
   content: "\e906";
 }
 
+.legal-notice {
+  margin-top: 2rem;
+  text-align: center;
+
+  h2 {
+    font-size: 1.5rem;
+    text-align: left;
+    margin-block-start: 2rem;
+
+  }
+  
+  h2,p {
+    text-align: left;
+    margin-block-end: 1rem;
+  }
+}
+
 /* responsive */
 @media screen and (min-width: 40em) {
   .header__flex {
